@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static('./client'));
 
 var dbQueries = require('./dbqueries');
-
+console.log(dbQueries);
 app.get('/meals', function (req, res) {
   dbQueries.getAllMeals(req, function(rows){
     res.send(rows);
