@@ -7,8 +7,39 @@
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 </head>
   <body>
-    <h1>Calorie counter</h1>
+    <div class="wrapper">
+      <h1>Calorie counter</h1>
+      <div class="input-container">
+        <form class = "data-form" name="the-form" action = "#">
+          <input type="text" class="meal-name-input" placeholder="Meal">
+          <input type="text" class="calorie-input" placeholder="Calories">
+          <input type="date" class="date-input">
+          <!-- <input type="datetime-local" class="date-input"> -->
+          <button type="submit" class="submit-button, add-button">Add</button>
+        </form>
+      </div>
+      <!-- <div class = "title">
+        <div>Meal</div>
+        <div>Calories</div>
+        <div>Date</div>
+      </div> -->
 
-    <script src="../calorie-frontend.js"></script>
+      <div class= "content">
+      </div>
+
+      <div class="footer">
+        <h3>SUM:</h3>
+        <div class="sum"></div>
+        <button class="delete-button">Delete selected item</button>
+        <form>
+          <input type="date" class="filter-date-input">
+          <button class="filter-button">Filter meals</button>
+          <button class="unfilter-button">Show all meals</button>
+        </form>
+      </div>
+    </div>
+    <script src="dom.js"></script>
+    <script src="xhr.js"></script>
+    <script src="frontend.js"></script>
   </body>
 </html>
