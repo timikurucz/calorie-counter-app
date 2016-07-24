@@ -2,6 +2,7 @@ body {
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+
 }
 
 .wrapper {
@@ -12,85 +13,7 @@ body {
   text-align: center;
   min-height: 60%;
   opacity: 0.95;
-}
-
-.content {
-  padding: 0;
-  display: flex;
-  flex-flow: column;
-  box-sizing: border-box;
-  margin-right: 100px;
-  margin-left: 100px;
-  font-size: 20px;
-}
-
-
-.input-text {
-    background-color: transparent;
-    border:0;
-    height: 100%;
-    width: 80%;
-    outline: none;
-    font-size: 40px;
-    text-align: center;
-}
-
-.add-button {
-    /*background-color: transparent;*/
-    border:0;
-    height: 100%;
-    width: 20%;
-}
-
-/*.button-text, .add-button{
-    font-family: Lato-Regular, sans-serif;
-    font-size: 26px;
-    color: #ffffff;
-    background-color: #FA9D1C;
-    float: right;
-    margin-top: 40px;
-}*/
-
-.add-button {
-  background-color: #FA9D1C;
-}
-
-.data-form {
-  display: flex;
-  justify-content:center;
-  /*border:1px solid grey;
-  display:inline-block;
-  width: 80%;*/
-  height: 30px;
-  margin-bottom: 40px;
-}
-/*button {
-  background-color: transparent;
-  /*border: none;*/
-  /*cursor:pointer;
-  outline:none;
-  height: 30px;
-}*/
-
-.delete-button {
-  background-color: #BECC31;
-  /*background-image: url("../img/delete.png");
-  background-size: 100%;
-  height: 40px;
-  width: 40px;*/
-  /*float: left;*/
-
-}
-
-.meal {
-  border-bottom: 2px dotted #F58F9A;
-  margin-top: 20px;
-}
-
-input[type="checkbox"] {
-  cursor: pointer;
-  zoom: 1.5;
-  /*margin-bottom: 10px;*/
+  border-radius: 3%;
 }
 
 h3 {
@@ -104,11 +27,64 @@ h1 {
   font-weight: 1000;
   padding: 40px;
 }
-
-/*.content {
+.content {
+  padding: 0;
   display: flex;
-  justify-content: space-between;
-}*/
+  flex-flow: column;
+  box-sizing: border-box;
+  margin-right: 100px;
+  margin-left: 100px;
+  font-size: 20px;
+}
+
+
+.input-text {
+  background-color: transparent;
+  border:0;
+  height: 100%;
+  width: 80%;
+  outline: none;
+  font-size: 40px;
+  text-align: center;
+}
+
+.add-button {
+  outline: none;
+  height: 100%;
+  width: 20%;
+  font-weight: bold;
+  font-size: 20px;
+  color: #231F20;
+}
+
+.data-form {
+  display: flex;
+  justify-content:center;
+  height: 30px;
+  margin-bottom: 40px;
+}
+
+.delete-button {
+  font-weight: bold;
+  font-size: 18px;
+  color: #231F20;
+  float: right;
+  margin-top: 20px;
+  margin-right: 80px;
+  height: 40px;
+  width: 80px;
+  outline: none;
+}
+
+.meal {
+  border-bottom: 2px dotted #F58F9A;
+  margin-top: 20px;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  zoom: 1.5;
+}
 
 .meal {
   display: flex;
@@ -123,7 +99,7 @@ h1 {
 }
 
 .meal-calories {
-  width: 100px;
+  width: 30%;
   text-align: left;
 }
 
@@ -131,20 +107,31 @@ h1 {
   display: none;
 }
 
-/*.title {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  margin-left: 100px;
-  font-weight: bold;
-}*/
-
 .meal-name-input, .calorie-input, .date-input {
   width: 20%;
   margin-right: 5px;
 }
 
+.meal-date {
+  width: 60%;
+}
 
-/*.cbox {
-  margin-left: 20px;
-}*/
+.sum {
+  font-size: 30px;
+}
+
+.sumdiv {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column;
+}
+
+.footer-form {
+  margin-bottom: 30px;
+}

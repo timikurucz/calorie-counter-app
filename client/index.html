@@ -14,24 +14,20 @@
           <input type="text" class="meal-name-input" placeholder="Meal">
           <input type="text" class="calorie-input" placeholder="Calories">
           <input type="date" class="date-input">
-          <!-- <input type="datetime-local" class="date-input"> -->
           <button type="submit" class="submit-button, add-button">Add</button>
         </form>
       </div>
-      <!-- <div class = "title">
-        <div>Meal</div>
-        <div>Calories</div>
-        <div>Date</div>
-      </div> -->
 
       <div class= "content">
       </div>
 
       <div class="footer">
-        <h3>SUM:</h3>
-        <div class="sum"></div>
-        <button class="delete-button">Delete selected item</button>
-        <form>
+        <div><button class="delete-button">Delete</button></div>
+        <div class="sumdiv">
+          <h3>SUM:</h3>
+          <div class="sum"></div>
+        </div>
+        <form class="footer-form">
           <input type="date" class="filter-date-input">
           <button class="filter-button">Filter meals</button>
           <button class="unfilter-button">Show all meals</button>
@@ -41,5 +37,6 @@
     <script src="dom.js"></script>
     <script src="xhr.js"></script>
     <script src="frontend.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

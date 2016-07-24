@@ -15,14 +15,14 @@ var domOperations = (function(){
 
 
   function getTotalCalories() {
-     var allCalories = document.querySelectorAll('.meal-calories');
-     var sum = 0;
-     for (var i = 0; i < allCalories.length; i++) {
-       var calorie = parseInt(allCalories[i].textContent);
-       sum += calorie;
-     }
-     return sum;
-   }
+    var allCalories = document.querySelectorAll('.meal-calories');
+    var sum = 0;
+    for (var i = 0; i < allCalories.length; i++) {
+      var calorie = parseInt(allCalories[i].textContent);
+      sum += calorie;
+    }
+    return sum;
+  }
 
    function updateCalSum() {
      divSum.textContent = getTotalCalories() + ' kcal';
@@ -60,6 +60,7 @@ var domOperations = (function(){
     checkBox.classList.add('cbox');
     parent.appendChild(checkBox);
   }
+
   // function createDelButton(parent) {
   //   var del = document.createElement('button');
   //   del.classList.add('del-button');
@@ -73,7 +74,7 @@ var domOperations = (function(){
   }
 
   function getSelectedMealsIds() {
-    var itemIds = []
+    var itemIds = [];
     var checkedItems = document.querySelectorAll('input[type=checkbox]:checked');
     for (var i = 0; i < checkedItems.length; i++) {
       itemIds.push(parseInt(checkedItems[i].parentNode.id));
@@ -94,20 +95,19 @@ var domOperations = (function(){
   }
 
 
-function getFilteredMeals() {
-  var allMealDates = document.querySelectorAll('.meal-date');
-  console.log(allMealDates);
-  console.log(allMealDates.length);
-  console.log(allMealDates[0].textContent);
-  for (var i = 0; i < allMealDates.length; i++) {
-    if (allMealDates[i].textContent !== filterInputField.value.slice(0, 10)) {
-      allMealDates[i].parentNode.classList.add('hidden');
+  function getFilteredMeals() {
+    var allMealDates = document.querySelectorAll('.meal-date');
+    console.log(allMealDates);
+    console.log(allMealDates.length);
+    console.log(allMealDates[0].textContent);
+    for (var i = 0; i < allMealDates.length; i++) {
+      if (allMealDates[i].textContent !== filterInputField.value.slice(0, 10)) {
+        allMealDates[i].parentNode.classList.add('hidden');
+      }
     }
   }
-}
 
-//backendes filterezeshez:
-  function newFiltered(response) {
+  function showFilteredMeals(response) {
     console.log(response[0]);
     console.log(response.length);
     content.innerHTML = '';
@@ -133,7 +133,7 @@ function getFilteredMeals() {
     delOneMeal: delOneMeal,
     delMoreThanOneMeals:delMoreThanOneMeals,
     getFilteredMeals:getFilteredMeals,
-    newFiltered:newFiltered,
+    showFilteredMeals:showFilteredMeals,
     showAllButton:showAllButton
   };
 })();

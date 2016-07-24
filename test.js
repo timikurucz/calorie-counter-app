@@ -36,7 +36,7 @@ tape('addmeal calls query', function (t) {
     connect: function(){}
   };
   var testMealModule = meal(mockConnection);
-  testMealModule.addNewMeal({name: "alma"});
+  testMealModule.addNewMeal({ name: 'alma' });
   t.ok(mockConnection.query.called);
   t.end();
 });
@@ -50,16 +50,11 @@ tape('addmeal calls query with proper sql', function (t) {
   var testMealModule = meal(mockConnection);
 
   var testMeal = {
-    name: "alma",
+    name: 'alma',
     calories: 2,
-    date: "ma"
+    date: 'ma'
   };
-
   var expectedSQL = "INSERT INTO meals (name, calories, date) VALUES ('" +'alma'+ "','" +2+ "','" +'ma'+ "')";
-
-  // var expectedSQL = 'INSERT INTO meals ' +
-  //   '(id, name, calories, date)' +
-  //   ' VALUES (\'1\', \'alma\', \'2\', \'ma\')';
 
   testMealModule.addNewMeal(testMeal);
   t.ok(mockConnection.query.calledWithMatch(expectedSQL));
@@ -73,11 +68,9 @@ tape('delmeals calls query with proper sql', function (t) {
     connect: function(){}
   };
   var testMealModule = meal(mockConnection);
-
   var testMeal = {
     item_ids: [1, 2, 3],
   };
-
   var expectedSQL = "DELETE FROM meals WHERE id IN (1,2,3)" ;
 
   testMealModule.deleteMeals(testMeal);
@@ -85,25 +78,16 @@ tape('delmeals calls query with proper sql', function (t) {
   t.end();
 });
 
-/////
-
 tape('filtermeals calls query with proper sql', function (t) {
   var mockConnection = {
     query: sinon.spy(),
     connect: function(){}
   };
   var testMealModule = meal(mockConnection);
+  var expectedSQL = 'SELECT * FROM meals WHERE meals.date LIKE "ma%";';
 
-  var testMeal = {
-    // id: 3,
-    // name: 'alma',
-    // calories: 5,
-    date: 'ma',
-  };
-
-  var expectedSQL = "'SELECT * FROM meals WHERE meals.date LIKE ' + 'ma' + '%';'";
-
-  testMealModule.getFilteredMeals(testMeal);
+  testMealModule.getFilteredMeals('ma');
+  console.log(mockConnection.query.args);
   t.ok(mockConnection.query.calledWithMatch(expectedSQL));
   t.end();
 });

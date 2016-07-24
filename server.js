@@ -25,7 +25,6 @@ app.get('/meals', function (req, res) {
   if (req.query.date) {
     dbQueries.getFilteredMeals(req.query.date, function (result) {
       console.log(JSON.stringify(result));
-      // res.send(result);
       res.send(JSON.stringify(result));
     });
   } else {
@@ -42,7 +41,7 @@ app.post('/meals', urlencodedParser, function(req, res) {
   });
 });
 
-//jo-backend-egy torlesre:
+// for delete only one meal on backend:
 app.delete('/meals/:id', urlencodedParser, function (req, res) {
   dbQueries.deleteMeal(req.params.id, function(rows){
     if (rows.affectedRows === 1) {
@@ -54,7 +53,7 @@ app.delete('/meals/:id', urlencodedParser, function (req, res) {
 });
 
 
-//jo tobb torlesre:
+// for delete multiple meals:
 app.delete('/meals', urlencodedParser, function (req, res) {
   dbQueries.deleteMeals(req.body, function(rows){
     console.log(rows);
